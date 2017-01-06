@@ -15,12 +15,12 @@ export class Article {
     }
 
     voteUp():void {
-        this.article.votes +=1;
+        this.votes +=1;
     }
 
     voteDown():void {
-        if(this.article.votes > 0) {
-            this.article.votes -=1;
+        if(this.votes > 0) {
+            this.votes -=1;
         }
     }
 }
