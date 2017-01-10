@@ -14,13 +14,27 @@ export class Article {
         this.votes = votes || 0;
     }
 
-    voteUp():void {
-        this.votes +=1;
+    voteUp(): void {
+        this.votes += 1;
     }
 
-    voteDown():void {
-        if(this.votes > 0) {
-            this.votes -=1;
+    voteDown(): void {
+        if (this.votes > 0) {
+            this.votes -= 1;
+        }
+    }
+
+    domain(): string {
+        try {
+            console.log(this.link);
+            if (this.link) {
+                const link: string = this.link.split('//')[1];
+                return link.split('/')[0];
+            }
+            return 'No domain'
+        }
+        catch (err) {
+            return null;
         }
     }
 }
